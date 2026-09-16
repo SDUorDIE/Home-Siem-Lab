@@ -1,1 +1,1183 @@
+Home SIEM & Detection Lab 
 
+Project Type: Cybersecurity / Security Operations / Detection Engineering 
+
+Project Status: Day 1 (Planning)  
+
+Planned Duration: 4 Weeks 
+
+Primary Role: Security Analyst / Detection Engineer 
+
+Environment: Isolated Virtualized Home Lab 
+
+ 
+
+ 
+
+ 
+
+1. Project Overview 
+
+The Home SIEM & Detection Lab is a hands on cybersecurity project designed to simulate a small enterprise security monitoring environment within an isolated virtual lab. 
+
+The project will involve deploying a Security Information and Event Management (SIEM) platform, configuring a Windows endpoint for enhanced security telemetry, collecting and analyzing logs, developing security detections, and investigating controlled security events. 
+
+The primary SIEM platform will be Wazuh, hosted on an Ubuntu Server virtual machine. A Windows 11 virtual machine will act as the monitored endpoint and will use Sysmon and the Wazuh Agent to generate and forward detailed security telemetry. 
+
+The project will progress from infrastructure deployment to security monitoring, detection engineering, investigation, and professional documentation. 
+
+The purpose is not simply to install and use a SIEM, but to develop practical understanding of how security analysts collect telemetry, identify suspicious behavior, investigate alerts, create detections, and document security incidents. 
+
+ 
+
+2. Project Purpose 
+
+Modern Security Operations Centers (SOCs) rely heavily on centralized security monitoring and detection systems. 
+
+This project will provide practical experience with the fundamental workflow of a SOC: 
+
+Endpoint Activity 
+      ↓ 
+Security Telemetry 
+      ↓ 
+Log Collection 
+      ↓ 
+SIEM 
+      ↓ 
+Detection 
+      ↓ 
+Alert 
+      ↓ 
+Investigation 
+      ↓ 
+Incident Documentation 
+      ↓ 
+Remediation / Lessons Learned 
+
+The completed project will serve as a practical demonstration of cybersecurity knowledge and will form one of the foundational projects in my cybersecurity portfolio. 
+
+ 
+
+ 
+
+ 
+
+3. Project Objectives 
+
+3.1 Primary Objective 
+
+Design, deploy, and operate a functional home-based SIEM environment capable of collecting endpoint telemetry, identifying suspicious activity, supporting security investigations, and documenting security findings. 
+
+3.2 Technical Objectives 
+
+The project will aim to: 
+
+Deploy a Wazuh SIEM environment. 
+
+Configure an Ubuntu Server virtual machine to host the SIEM components. 
+
+Configure a Windows 11 virtual machine as a monitored endpoint. 
+
+Install and configure Sysmon for enhanced Windows telemetry. 
+
+Install and configure the Wazuh Agent on the Windows endpoint. 
+
+Forward relevant endpoint telemetry to Wazuh. 
+
+Learn how Windows security events are generated and recorded. 
+
+Analyze authentication and process-related events. 
+
+Monitor PowerShell activity. 
+
+Monitor accounts and privilege-related activities. 
+
+Monitor suspicious system changes. 
+
+Develop custom security detections. 
+
+Test detections using controlled lab activity. 
+
+Investigate generated alerts. 
+
+Map relevant detections to MITRE ATT&CK techniques. 
+
+Produce professional incident investigation reports. 
+
+Document the complete deployment and troubleshooting process. 
+
+Create a reproducible project that can be reviewed by another person. 
+
+ 
+
+ 
+
+4. Learning Objectives 
+
+By completing the project, I should be able to explain: 
+
+SIEM 
+
+What a SIEM is. 
+
+Why organizations centralize security logs. 
+
+How SIEMs support detection and investigation. 
+
+The difference between logs, events, alerts, and incidents. 
+
+Windows Security 
+
+How Windows records security activity. 
+
+How authentication events are generated. 
+
+How process execution can be monitored. 
+
+How PowerShell activity can be investigated. 
+
+How account and privilege changes appear in telemetry. 
+
+Sysmon 
+
+What Sysmon is. 
+
+Why enhanced endpoint telemetry is useful. 
+
+What types of events Sysmon can generate. 
+
+How Sysmon data can support threat detection. 
+
+Detection Engineering 
+
+How to identify useful security signals. 
+
+How detection rules work. 
+
+How to reduce false positives. 
+
+How detections can be mapped to MITRE ATT&CK. 
+
+How to test whether a detection actually works. 
+
+Incident Investigation 
+
+How to establish what happened. 
+
+How to identify relevant evidence. 
+
+How to build an incident timeline. 
+
+How to distinguish normal activity from suspicious activity. 
+
+How to document findings. 
+
+ 
+
+ 
+
+5. Project Scope 
+
+5.1 In Scope 
+
+The following activities are included in the project: 
+
+Infrastructure 
+
+Virtual machine deployment. 
+
+Ubuntu Server configuration. 
+
+Windows 11 endpoint configuration. 
+
+Virtual networking. 
+
+Basic Linux administration. 
+
+Basic Windows administration. 
+
+SIEM 
+
+Wazuh deployment. 
+
+Wazuh dashboard configuration. 
+
+Wazuh Agent deployment. 
+
+Log collection. 
+
+Log searching and filtering. 
+
+Alert analysis. 
+
+Endpoint Telemetry 
+
+Sysmon deployment. 
+
+Windows Event Logs. 
+
+Process monitoring. 
+
+Authentication monitoring. 
+
+PowerShell monitoring. 
+
+Account activity monitoring. 
+
+Service activity monitoring. 
+
+Security related system changes. 
+
+Detection Engineering 
+
+Built-in detection analysis. 
+
+Custom detection development. 
+
+Detection testing. 
+
+False-positive analysis. 
+
+MITRE ATT&CK mapping. 
+
+Security Investigation 
+
+Controlled simulations will be used to generate security telemetry for investigation. 
+
+Potential scenarios include: 
+
+Multiple failed authentication attempts. 
+
+Suspicious PowerShell activity. 
+
+Local account creation. 
+
+Privilege related activity. 
+
+Suspicious process execution. 
+
+Service creation. 
+
+Network reconnaissance indicators. 
+
+Documentation 
+
+Architecture documentation. 
+
+Installation documentation. 
+
+Configuration documentation. 
+
+Detection documentation. 
+
+Investigation reports. 
+
+Screenshots. 
+
+Lessons learned. 
+
+Troubleshooting documentation. 
+
+ 
+
+ 
+
+6. Out of Scope 
+
+The following activities are intentionally excluded from this project: 
+
+Monitoring unauthorized systems. 
+
+Attacking real world organizations. 
+
+Testing third party infrastructure without permission. 
+
+Production SIEM deployment. 
+
+Large scale enterprise infrastructure. 
+
+Development of malware. 
+
+Deployment of real malware outside an appropriate isolated environment. 
+
+Destructive attacks. 
+
+Credential theft from real users. 
+
+Collection of real users' private information. 
+
+The project will remain focused on defensive security monitoring and controlled laboratory experimentation. 
+
+ 
+
+ 
+
+7. Technology Stack 
+
+7.1 Core Infrastructure 
+
+ 
+
+Technology 
+
+ 
+
+Purpose 
+
+ 
+
+VirtualBox  
+
+Virtual platform 
+
+Ubuntu Server 
+
+SIEM server operating system 
+
+Windows 11 
+
+Monitored endpoint  
+
+GitHub 
+
+Version control and project documentation 
+
+ 
+
+ 
+
+ 
+
+7.2 Security Tools 
+
+Technology 
+
+ 
+
+Purpose 
+
+ 
+
+Wazuh 
+
+ 
+
+SIEM / security monitoring 
+
+Wazuh Agent 
+
+ 
+
+Endpoint telemetry collection 
+
+Sysmon 
+
+ 
+
+Enhanced Windows system telemetry 
+
+ 
+
+MITRE ATT&CK 
+
+ 
+
+Detection and technique mapping 
+
+ 
+
+7.3 Future Tools 
+
+Additional tools may be introduced later if they provide value to the project. 
+
+Potential examples include: 
+
+Wireshark 
+
+Zeek 
+
+Suricata 
+
+Additional log sources 
+
+These tools will not be added simply for the sake of increasing the number of technologies used. Each addition must have a clear learning or security-monitoring purpose. 
+
+ 
+
+ 
+
+8. Lab Architecture 
+
+The initial architecture will consist of two primary virtual machines. 
+
+                  ISOLATED HOME LAB 
+                          │ 
+            ┌─────────────┴─────────────┐ 
+            │                           │ 
+            ▼                           ▼ 
+     Windows 11 VM                Ubuntu Server VM 
+      Monitored Host                SIEM Server 
+            │                           │ 
+            │                           │ 
+         Sysmon                      Wazuh 
+            │                           │ 
+       Wazuh Agent                     │ 
+            │                           │ 
+            └──────────────┬────────────┘ 
+                           │ 
+                      Security Logs 
+                           │ 
+                           ▼ 
+                    Wazuh Dashboard 
+                           │ 
+                           ▼ 
+                   Security Analyst 
+                           │ 
+            ┌──────────────┴──────────────┐ 
+            │                             │ 
+            ▼                             ▼ 
+      Investigation                 Detection Engineering 
+            │                             │ 
+            └──────────────┬──────────────┘ 
+                           ▼ 
+                   Incident Documentation/Report 
+
+ 
+
+ 
+
+ 
+
+9. Component Responsibilities 
+
+Windows 11 Endpoint 
+
+The Windows VM will represent an employee workstation. 
+
+It will generate telemetry related to: 
+
+User authentication. 
+
+Process execution. 
+
+PowerShell. 
+
+System changes. 
+
+Account activity. 
+
+Services. 
+
+Other relevant security events. 
+
+Sysmon 
+
+Sysmon will provide enhanced endpoint telemetry that can be used to investigate suspicious activity. 
+
+The project will document the purpose of relevant Sysmon events rather than treating Sysmon as a black-box logging tool. 
+
+Wazuh Agent 
+
+The Wazuh Agent will collect relevant telemetry from the Windows endpoint and forward it to the Wazuh infrastructure. 
+
+Ubuntu Server 
+
+Ubuntu Server will host the SIEM infrastructure. 
+
+It will provide the central location for receiving and analyzing endpoint telemetry. 
+
+Wazuh 
+
+Wazuh will provide: 
+
+Log collection. 
+
+Event analysis. 
+
+Alerting. 
+
+Search capabilities. 
+
+Security monitoring. 
+
+Dashboard visualization. 
+
+Detection capabilities. 
+
+Security Analyst 
+
+The analyst role represents my role within the lab. 
+
+Responsibilities include: 
+
+Monitoring alerts. 
+
+Investigating suspicious activity. 
+
+Validating detections. 
+
+Documenting evidence. 
+
+Mapping techniques. 
+
+Producing incident reports. 
+
+Recommending improvements. 
+
+ 
+
+ 
+
+ 
+
+10. Security Scenarios 
+
+The lab will eventually be used to investigate controlled security scenarios. 
+
+Scenario 1 — Authentication Failures 
+
+Generate controlled failed authentication activity and investigate: 
+
+Number of attempts. 
+
+Source. 
+
+Target account. 
+
+Time period. 
+
+Whether the activity appears normal or suspicious. 
+
+Scenario 2 — Suspicious PowerShell 
+
+Generate controlled PowerShell activity and investigate: 
+
+Parent process. 
+
+Command execution. 
+
+User. 
+
+Timestamp. 
+
+Related events. 
+
+Detection opportunities. 
+
+Scenario 3 — Account Creation 
+
+Create a controlled local account and investigate: 
+
+Which account performed the action. 
+
+Which account was created. 
+
+Timestamp. 
+
+Related events. 
+
+Whether the activity was authorized. 
+
+Scenario 4 — Suspicious Process Execution 
+
+Generate controlled process activity and investigate: 
+
+Process name. 
+
+Parent process. 
+
+User. 
+
+Command line. 
+
+Execution time. 
+
+Related telemetry. 
+
+Scenario 5 — Service Creation 
+
+Create a controlled service and investigate the resulting telemetry. 
+
+The investigation will focus on understanding: 
+
+What happened. 
+
+Which account performed the action. 
+
+Which process was involved. 
+
+What evidence was generated. 
+
+How the activity could be detected. 
+
+ 
+
+ 
+
+ 
+
+11. Detection Engineering Goals 
+
+The project will initially target a minimum of 10 documented detections. 
+
+Each detection should contain: 
+
+Detection Name 
+│ 
+├── Objective 
+├── Threat Scenario 
+├── Data Source 
+├── Detection Logic 
+├── Expected Event 
+├── Testing Procedure 
+├── Expected Result 
+├── False Positive Considerations 
+├── MITRE ATT&CK Mapping 
+└── Recommended Response 
+
+The goal is to understand the reasoning behind each detection rather than simply copying existing rules. 
+
+ 
+
+ 
+
+ 
+
+12. Incident Investigation Methodology 
+
+Each significant investigation will follow a consistent process: 
+
+Alert 
+↓ 
+Validate 
+↓ 
+Collect Evidence 
+↓ 
+Establish Timeline 
+↓ 
+Identify Root Activity 
+↓ 
+Determine Impact 
+↓ 
+Map Technique 
+↓ 
+Recommend Response 
+↓ 
+Document Findings 
+
+Each incident report should answer: 
+
+What happened? 
+
+When did it happen? 
+
+Which system was involved? 
+
+Which user/account was involved? 
+
+What evidence supports the conclusion? 
+
+Why is the activity suspicious? 
+
+Which MITRE ATT&CK technique applies? 
+
+What could be done to prevent or detect it in the future? 
+
+ 
+
+ 
+
+ 
+
+13. Deliverables 
+
+Technical Deliverables 
+
+Functional Wazuh SIEM. 
+
+Configured Ubuntu Server. 
+
+Configured Windows endpoint. 
+
+Sysmon deployment. 
+
+Wazuh Agent deployment. 
+
+Centralized Windows telemetry. 
+
+Working security detections. 
+
+Documentation Deliverables 
+
+home-siem-detection-lab/ 
+│ 
+├── README.md 
+│ 
+├── docs/ 
+│   ├── project-charter.md 
+│   ├── architecture.md 
+│   ├── installation.md 
+│   ├── configuration.md 
+│   ├── detections.md 
+│   └── troubleshooting.md 
+│ 
+├── architecture/ 
+│   └── diagrams 
+│ 
+├── detections/ 
+│   └── detection documentation 
+│ 
+├── incident-reports/ 
+│   └── investigation reports 
+│ 
+├── screenshots/ 
+│   └── project evidence 
+│ 
+├── mitre/ 
+│   └── ATT&CK mappings 
+│ 
+└── lessons-learned.md 
+
+ 
+
+14. Portfolio Deliverables 
+
+The final project will also produce: 
+
+Public GitHub repository. 
+
+Technical project write-up. 
+
+Architecture diagram. 
+
+SIEM screenshots. 
+
+Detection examples. 
+
+Incident investigation reports. 
+
+Lessons-learned document. 
+
+Resume-ready project description. 
+
+Portfolio website project page. 
+
+The portfolio presentation will emphasize what was built, why it was built, how it was tested, and what was learned. 
+
+ 
+
+15. Success Criteria 
+
+The project will be considered successfully completed when the following criteria have been met. 
+
+Infrastructure 
+
+Ubuntu Server VM successfully deployed. 
+
+Windows 11 VM successfully deployed. 
+
+Virtual networking successfully configured. 
+
+Both systems can communicate as required. 
+
+SIEM 
+
+Wazuh successfully deployed. 
+
+Wazuh dashboard accessible. 
+
+Windows endpoint successfully enrolled. 
+
+Windows telemetry successfully received. 
+
+Logs can be searched and investigated. 
+
+Telemetry 
+
+Windows authentication events visible. 
+
+Sysmon events visible. 
+
+Process activity visible. 
+
+PowerShell activity visible. 
+
+Account activity visible. 
+
+Detection Engineering 
+
+At least 10 documented detections created or validated. 
+
+Detections tested using controlled lab activity. 
+
+Detection results documented. 
+
+Relevant detections mapped to MITRE ATT&CK. 
+
+False-positive considerations documented. 
+
+Investigation 
+
+At least 5 controlled security scenarios investigated. 
+
+Evidence captured for each investigation. 
+
+Incident timelines created where appropriate. 
+
+Investigation reports completed. 
+
+Documentation 
+
+Complete README. 
+
+Architecture diagram. 
+
+Installation documentation. 
+
+Configuration documentation. 
+
+Detection documentation. 
+
+Incident reports. 
+
+Lessons learned. 
+
+Troubleshooting notes. 
+
+Portfolio 
+
+GitHub repository published. 
+
+Project added to portfolio website. 
+
+Resume bullet points created. 
+
+Project can be explained independently during an interview. 
+
+ 
+
+16. Timeline 
+
+Week 1 — Infrastructure & SIEM Deployment 
+
+Objectives 
+
+Build the basic environment. 
+
+Tasks 
+
+Create GitHub repository. 
+
+Finalize project documentation. 
+
+Install/configure VirtualBox. 
+
+Create Ubuntu Server VM. 
+
+Create Windows 11 VM. 
+
+Configure virtual networking. 
+
+Configure initial system settings. 
+
+Deploy Wazuh. 
+
+Verify the SIEM is operational. 
+
+Expected Outcome 
+
+A functioning SIEM environment with the basic infrastructure in place. 
+
+ 
+
+Week 2 — Endpoint Telemetry 
+
+Objectives 
+
+Connect the Windows endpoint and establish useful telemetry. 
+
+Tasks 
+
+Install Wazuh Agent. 
+
+Register Windows endpoint. 
+
+Install Sysmon. 
+
+Configure telemetry collection. 
+
+Generate normal Windows activity. 
+
+Verify logs arrive in Wazuh. 
+
+Learn relevant Windows and Sysmon events. 
+
+Document configuration. 
+
+Expected Outcome 
+
+The SIEM receives useful telemetry from the Windows endpoint. 
+
+ 
+
+Week 3 — Detection & Investigation 
+
+Objectives 
+
+Turn telemetry into security detections. 
+
+Tasks 
+
+Identify useful security events. 
+
+Create detection rules. 
+
+Test detections. 
+
+Generate controlled security scenarios. 
+
+Investigate alerts. 
+
+Collect evidence. 
+
+Map detections to MITRE ATT&CK. 
+
+Create incident reports. 
+
+Expected Outcome 
+
+A functioning detection and investigation workflow. 
+
+ 
+
+Week 4 — Documentation & Portfolio 
+
+Objectives 
+
+Turn the technical lab into a professional cybersecurity case study. 
+
+Tasks 
+
+Complete README. 
+
+Finalize architecture diagram. 
+
+Organize screenshots. 
+
+Finalize detection documentation. 
+
+Complete incident reports. 
+
+Document troubleshooting. 
+
+Write lessons learned. 
+
+Review GitHub repository. 
+
+Create portfolio project page. 
+
+Create resume bullet points. 
+
+Expected Outcome 
+
+A complete, reproducible, portfolio-ready cybersecurity project. 
+
+ 
+
+17. Project Risks 
+
+ 
+
+Risk  
+
+Impact  
+
+Mitigation  
+
+VM resource limitations  
+
+High  
+
+Optimize VM resources and monitor system usage 
+
+Network configuration problems  
+
+Medium  
+
+Document and test connectivity before SIEM deployment  
+
+Wazuh installation issues  
+
+Medium  
+
+Follow official documentation and troubleshoot systematically 
+
+Insufficient telemetry 
+
+High 
+
+Validate Sysmon and Windows event collection 
+
+False positives  
+
+Medium  
+
+Test detections and document tuning  
+
+Configuration mistakes 
+
+Medium  
+
+Maintain configuration documentation and backups 
+
+Project scope becoming too large  
+
+High  
+
+Follow defined scope and postpone optional features 
+
+Loss of lab configuration 
+
+Medium  
+
+Maintain snapshots and documented configurations 
+
+ 
+
+ 
+
+18. Ethical Considerations 
+
+This project will be conducted exclusively within an authorized laboratory environment. 
+
+All systems used for testing will either be owned by me or explicitly authorized for security testing. 
+
+The project will follow these principles: 
+
+Authorization 
+
+No external system, organization, network, account, or application will be tested without explicit authorization. 
+
+Isolation 
+
+Security simulations will be performed inside the controlled laboratory environment. 
+
+Data Protection 
+
+Real personal, organizational, authentication, or confidential information will not intentionally be collected. 
+
+Safe Testing 
+
+Testing will avoid destructive actions and unnecessary disruption to systems. 
+
+Responsible Disclosure 
+
+If a genuine vulnerability is discovered outside the intentionally vulnerable lab environment, it will not be exploited beyond what is necessary to validate the finding and will be handled according to an appropriate responsible-disclosure process. 
+
+Documentation 
+
+Security testing activities will be documented so that their purpose, scope, and authorization are clear. 
+
+19. Documentation Philosophy 
+
+Documentation is considered part of the project rather than afterthought. 
+
+For significant technical decisions, I will document: 
+
+What was done. 
+
+Why it was done. 
+
+How it was implemented. 
+
+What was expected. 
+
+What actually happened. 
+
+Problems encountered. 
+
+How problems were resolved. 
+
+Security implications. 
+
+Lessons learned. 
+
+Screenshots will be used as supporting evidence rather than replacing explanations. 
+
+ 
+
+20. Definition of Done 
+
+The project is not complete simply because Wazuh works. 
+
+The project will be considered complete when I can demonstrate the following workflow: 
+
+Generate Activity 
+      ↓ 
+Collect Telemetry 
+      ↓ 
+View Event 
+      ↓ 
+Detect Suspicious Behavior 
+      ↓ 
+Generate Alert 
+      ↓ 
+Investigate Alert 
+      ↓ 
+Collect Evidence 
+      ↓ 
+Map to MITRE ATT&CK 
+      ↓ 
+Document Incident 
+      ↓ 
+Recommend Defensive Action 
+
+I should also be able to explain the architecture, justify the technology choices, troubleshoot common issues, explain the detections I created, and discuss what I would improve if the environment were expanded into a larger enterprise lab. 
+
+ 
+
+21. Future Improvements 
+
+Potential future improvements include: 
+
+Additional Windows endpoints. 
+
+Linux endpoint monitoring. 
+
+Active Directory integration. 
+
+Network traffic monitoring. 
+
+Zeek integration. 
+
+Suricata integration. 
+
+Additional detection rules. 
+
+Automated detection testing. 
+
+Threat intelligence enrichment. 
+
+SOAR integration. 
+
+Microsoft Sentinel integration. 
+
+These features will only be implemented after the core project is complete. 
+
+ 
+
+ 
+
+ 
+
+22. Final Project Goal 
+
+The goal of the Home SIEM & Detection Lab is to demonstrate practical cybersecurity capability through a complete security monitoring lifecycle. 
+
+Rather than demonstrating only tool installation, the project will demonstrate the ability to: 
+
+Build → Monitor → Detect → Investigate → Document → Improve 
+
+The project will form the foundation for future cybersecurity projects involving network traffic analysis, Sigma detection engineering, threat hunting, Active Directory security, incident response, Microsoft Sentinel, SOAR automation, and other areas of the cybersecurity portfolio. 
+
+ 
